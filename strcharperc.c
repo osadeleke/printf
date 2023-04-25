@@ -3,25 +3,34 @@
 /**
  * print_char - print char
  * @arg: argument
+ *
+ * Return: 0 if successful
  */
-void print_char(va_list arg)
+int print_char(va_list arg)
 {
 	char c = va_arg(arg, int);
 
 	_putchar(c);
+
+	return (0);
 }
 
 /**
  * print_string - print string
  * @arg: argument
+ *
+ * Return: a - 1 the number of characters in string.
  */
-void print_string(va_list arg)
+int print_string(va_list arg)
 {
+	int a = 0;
 	char *s = va_arg(arg, char *);
 
-	while (*s)
+	while (s[a] != '\0')
 	{
-		_putchar(*s);
-		s++;
+		_putchar(s[a]);
+		a++;
 	}
+
+	return (a - 1);
 }

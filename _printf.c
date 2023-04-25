@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i;
+	int i, no_c = 0;
 
 	print_d data[] = {
 		{"c", print_char},
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		}
 		else if (*(format + i) == '%' && *(format + i + 1) == 's')
 		{
-			data[1].f_pr(arg);
+			no_c = data[1].f_pr(arg);
 			i++;
 		}
 		else if (*(format + i) == '%' && *(format + i + 1) == '%')
@@ -43,7 +43,8 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+	no_c = no_c + (i - 1);
 
 	va_end(arg);
-	return (i - 1);
+	return (no_c - 1);
 }

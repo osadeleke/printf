@@ -14,13 +14,13 @@
 typedef struct character_print
 {
 	char *c;
-	void (*f_pr)(va_list arg);
+	int (*f_pr)(va_list arg);
 } print_d;
 
 /* function prototypes */
 int _printf(const char *format, ...);
 int _putchar(char c);
-void print_char(va_list arg);
-void print_string(va_list arg);
+int print_char(va_list arg);
+int print_string(va_list arg);
 
 #endif /* MAIN_H */
