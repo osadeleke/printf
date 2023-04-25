@@ -6,7 +6,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* structures */
+
+/**
+ * print_d - print data
+ * @c: character.
+ * @f_pr: function pointer
+ */
 typedef struct
 {
 	char *c;
