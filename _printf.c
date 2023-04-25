@@ -22,24 +22,24 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (format && *(format + i))
 	{
-		if (*(format + i) != '%')
-		{
-			_putchar(*(format + i));
-		}
-		else if (*(format + i + 1) == 'c')
+		if (*(format + i) == '%' && *(format + i + 1) == 'c')
 		{
 			data[0].f_pr(arg);
 			i++;
 		}
-		else if (*(format + i + 1) == 's')
+		else if (*(format + i) == '%' && *(format + i + 1) == 's')
 		{
 			data[1].f_pr(arg);
 			i++;
 		}
-		else if (*(format + i + 1) == '%')
+		else if (*(format + i) == '%' && *(format + i + 1) == '%')
 		{
 			_putchar('%');
 			i++;
+		}
+		else
+		{
+			_putchar(*(format + i));
 		}
 		i++;
 	}
