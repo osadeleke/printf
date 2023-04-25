@@ -4,21 +4,21 @@
 /* header files */
 #include <stdarg.h>
 #include <stdlib.h>
-
+#include <unistd.h>
 
 /**
- * print_d - print data
+ * struct character_print - print data
  * @c: character.
  * @f_pr: function pointer
  */
-typedef struct
+typedef struct character_print
 {
 	char *c;
 	void (*f_pr)(va_list arg);
 } print_d;
 
 /* function prototypes */
-int printf(const char *format, ...);
+int _printf(const char *format, ...);
 int _putchar(char c);
 void print_char(va_list arg);
 void print_string(va_list arg);
