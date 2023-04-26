@@ -19,13 +19,12 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	i = 0;
-	while (format && *(format + i))
+	while (*(format + i))
 	{
 		if (format[i] == '%')
 		{
 			if (!format[i + 1] || format[i + 1] == ' ')
 				return (-1);
-
 			j = 0;
 			while (format[i + 1] != *(data[j].c) && j < 3)
 				j++;
