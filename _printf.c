@@ -49,5 +49,5 @@ int _printf(const char *format, ...)
 	no_c = no_c + (i - 1);
 	
 	va_end(arg);
-	return (i - 1);
+	return (no_c - 1);
 }
