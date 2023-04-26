@@ -32,5 +32,5 @@ int print_string(va_list arg)
 		a++;
 	}
 
-	return (a);
+	return (a - 1);
 }

@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 		{
 			data[0].f_pr(arg);
 			i++;
-			no_c++;
 		}
 		else if (*(format + i) == '%' && *(format + i + 1) == 's')
 		{
@@ -37,16 +36,16 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			i++;
-			no_c++;
 		}
 		else
 		{
 			_putchar(*(format + i));
-			no_c++;
 		}
 		i++;
+		no_c
 	}
 
+	no_c = no_c + (i - 1);
 	va_end(arg);
-	return (no_c);
+	return (no_c - 1);
 }
