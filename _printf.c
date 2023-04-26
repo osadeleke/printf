@@ -17,6 +17,8 @@ int _printf(const char *format, ...)
 		{"s", print_string}
 	};
 	va_start(arg, format);
+	if (!format)
+		return (-1);
 	i = 0;
 	while (format && *(format + i))
 	{
