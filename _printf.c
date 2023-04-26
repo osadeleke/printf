@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		}
 		else if (*(format + i) == '%' && *(format + i + 1) == 's')
 		{
-			no_c = data[1].f_pr(arg);
+			no_c = no_c + data[1].f_pr(arg);
 			i++;
 		}
 		else if (*(format + i) == '%' && *(format + i + 1) == '%')
