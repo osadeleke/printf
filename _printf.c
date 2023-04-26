@@ -13,9 +13,7 @@ int _printf(const char *format, ...)
 	int i, j, no_c = 0;
 
 	print_d data[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_perc}
+		{"c", print_char}, {"s", print_string}, {"%", print_perc}
 	};
 	va_start(arg, format);
 	if (!format)
@@ -26,21 +24,15 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (!format[i + 1] || format[i + 1] == ' ')
-				return(-1);
+				return (-1);
+
 			j = 0;
 			while (format[i + 1] != *(data[j].c) && j < 3)
-			{
 				j++;
-			}
 			if (j < 3)
 			{
 				no_c = no_c + data[j].f_pr(arg);
 				i++;
-			}
-			else
-			{
-				_putchar(format[i]);
-				no_c++;
 			}
 		}
 		else
