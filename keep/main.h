@@ -22,6 +22,5 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int print_char(va_list arg);
 int print_string(va_list arg);
-int print_perc(va_list arg __attribute((unused)));
 
 #endif /* MAIN_H */

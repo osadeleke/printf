@@ -15,18 +15,6 @@ int print_char(va_list arg)
 }
 
 /**
- * print_perc - print char
- * @arg: argument
- *
- * Return: 0 if successful
- */
-int print_perc(va_list arg)
-{
-	_putchar('%');
-	return (1);
-}
-
-/**
  * print_string - print string
  * @arg: argument
  *
