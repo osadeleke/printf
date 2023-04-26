@@ -16,20 +16,16 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string}
 	};
-
 	va_start(arg, format);
-
-	if(format[0] == '%' && (!format[1] || format[1] == ' '))
-		return (-1);
-
 	i = 0;
 	while (format && *(format + i))
 	{
-		if (*(format + i) == '%' && *(format + i + 1) == 'c')
+		if (format[i] == '%' && (!format[i + 1] || format[i + 1] == ' '))
+			return (-1);
+		else if (*(format + i) == '%' && *(format + i + 1) == 'c')
 		{
-			data[0].f_pr(arg);
+			no_c = no_c + data[0].f_pr(arg);
 			i++;
-			no_c++;
 		}
 		else if (*(format + i) == '%' && *(format + i + 1) == 's')
 		{
@@ -38,9 +34,8 @@ int _printf(const char *format, ...)
 		}
 		else if (*(format + i) == '%' && *(format + i + 1) == '%')
 		{
-			_putchar('%');
+			no_c = no_c + _putchar('%');
 			i++;
-			no_c++;
 		}
 		else
 		{
@@ -49,7 +44,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	
 	va_end(arg);
 	return (no_c);
 }
