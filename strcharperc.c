@@ -20,7 +20,7 @@ int print_char(va_list arg)
  *
  * Return: 0 if successful
  */
-int print_perc(va_list arg)
+int print_perc(va_list arg __attribute__((unused)))
 {
 	_putchar('%');
 	return (1);
