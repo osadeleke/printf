@@ -12,7 +12,7 @@ int print_char(va_list arg)
 
 	_putchar(c);
 
-	return (0);
+	return (1);
 }
 
 /**
@@ -26,11 +26,14 @@ int print_string(va_list arg)
 	int a = 0;
 	char *s = va_arg(arg, char *);
 
+	if (!s)
+		s = "(null)";
+
 	while (s[a] != '\0')
 	{
 		_putchar(s[a]);
 		a++;
 	}
 
-	return (a - 1);
+	return (a);
 }
