@@ -47,5 +47,5 @@ int _printf(const char *format, ...)
 
 	no_c = no_c + (i - 1);
 	va_end(arg);
-	return (no_c - 1);
+	return (i - 1);
 }
