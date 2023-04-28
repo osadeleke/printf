@@ -18,33 +18,28 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	if (!format)
 		return (-1);
-	for (i = 0; format[i]; i++)
+	i = 0;
+	while (*(format + i))
 	{
-		if (format[i] != '%')
-		{
-			_putchar(format[i]);
-			no_c++;
-		}
-		else
+		if (format[i] == '%')
 		{
 			if (!format[i + 1] || format[i + 1] == ' ')
 				return (-1);
-			for (j = 0; j < 3; j++)
-			{
-				if (format[i + 1] == *(data[j].c))
-					break;
-			}
+			j = 0;
+			while (format[i + 1] != *(data[j].c) && j < 3)
+				j++;
 			if (j < 3)
 			{
 				no_c = no_c + data[j].f_pr(arg);
 				i++;
 			}
-			else
-			{
-				_putchar(format[i]);
-				no_c++;
-			}
 		}
+		else
+		{
+			_putchar(*(format + i));
+			no_c++;
+		}
+		i++;
 	}
 	va_end(arg);
 	return (no_c);
