@@ -30,6 +30,6 @@ int print_binary(long int k, long int n)
 		n = print_binary(k / 2, n++);
 	}
 	_putchar(k % 2 + '0');
-
+	n++;
 	return (n);
 }
