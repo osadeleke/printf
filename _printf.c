@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int i, j, no_c = 0;
 
 	print_d data[] = {
-		{"c", p_c}, {"s", p_s}, {"%", p_p}, {"d", dic}, {"u", dcu}, {"i", dc},
+		{"c", pc}, {"s", ps}, {"%", pp}, {"d", dc}, {"u", dcu}, {"i", dc},
 		{"b", bc}
 	}; /** add print dig call and all after **/
 	va_start(arg, format);
