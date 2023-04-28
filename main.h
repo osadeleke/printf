@@ -26,4 +26,6 @@ int print_perc(va_list arg __attribute((unused)));
 
 int print_dig_call(va_list arg);
 int print_dig(long int k, long int n);
+int print_dig_call_u(va_list arg);
+int print_dig_u(long int k, long int n);
 #endif /* MAIN_H */

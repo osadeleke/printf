@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 
 	print_d data[] = {
 		{"c", print_char}, {"s", print_string}, {"%", print_perc},
-		{"d", print_dig_call}
-	}; /** add print dig call **/
+		{"d", print_dig_call}, {"u", print_dig_call_u}
+	}; /** add print dig call and all after **/
 	va_start(arg, format);
 	if (!format)
 		return (-1);
@@ -30,12 +30,12 @@ int _printf(const char *format, ...)
 		{
 			if (!format[i + 1] || format[i + 1] == ' ')
 				return (-1);
-			for (j = 0; j < 4; j++) /** changed j < 3 to j<4 **/
+			for (j = 0; j < 5; j++) /** changed j < 3 to j < 5 **/
 			{
 				if (format[i + 1] == *(data[j].c))
 					break;
 			}
-			if (j < 4) /** changed j < 3 to j < 4 **/
+			if (j < 5) /** changed j < 3 to j < 5 **/
 			{
 				no_c = no_c + data[j].f_pr(arg);
 				i++;
