@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * print_dig_call - collects int value and calls function to print.
+ * @arg: argument value here int.
+ *
+ * Return: n length of int.
+ */
 int print_dig_call(va_list arg)
 {
 	long int k = va_arg(arg, int);
@@ -10,6 +16,13 @@ int print_dig_call(va_list arg)
 	return (n);
 }
 
+
+/**
+ * print_dig - prints signed integers.
+ * @arg: argument value here int.
+ *
+ * Return: n length of int.
+ */
 int print_dig(long int k, long int n)
 {
 	if (k < 0)
@@ -28,6 +41,13 @@ int print_dig(long int k, long int n)
 	return (n);
 }
 
+
+/**
+ * print_dig_call_u - collects int value and calls function to print.
+ * @arg: argument value here int.
+ *
+ * Return: n length of int.
+ */
 int print_dig_call_u(va_list arg)
 {
 	long int k = va_arg(arg, int);
@@ -38,6 +58,13 @@ int print_dig_call_u(va_list arg)
 	return (n);
 }
 
+
+/**
+ * print_dig_call_u - prints unsigned integers.
+ * @arg: argument value here int.
+ *
+ * Return: n length of int.
+ */
 int print_dig_u(long int k, long int n)
 {
 	if (k < 0)
