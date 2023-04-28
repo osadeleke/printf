@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_dig_call - collects int value and calls function to print.
+ * dc - collects int value and calls function to print.
  * @arg: argument value here int.
  *
  * Return: n length of int.
  */
-int print_dig_call(va_list arg)
+int dc(va_list arg)
 {
 	long int k = va_arg(arg, int);
 	long int n;
@@ -44,12 +44,12 @@ int print_dig(long int k, long int n)
 
 
 /**
- * print_dig_call_u - collects int value and calls function to print.
+ * dcu - collects int value and calls function to print.
  * @arg: argument value here int.
  *
  * Return: n length of int.
  */
-int print_dig_call_u(va_list arg)
+int dcu(va_list arg)
 {
 	long int k = va_arg(arg, int);
 	long int n;

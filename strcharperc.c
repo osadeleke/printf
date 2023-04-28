@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_char - print char
+ * pc - print char
  * @arg: argument
  *
  * Return: 0 if successful
  */
-int print_char(va_list arg)
+int pc(va_list arg)
 {
 	char c = va_arg(arg, int);
 
@@ -15,24 +15,24 @@ int print_char(va_list arg)
 }
 
 /**
- * print_perc - print char
+ * pp - print percentage
  * @arg: argument
  *
  * Return: 0 if successful
  */
-int print_perc(va_list arg __attribute__((unused)))
+int pp(va_list arg __attribute__((unused)))
 {
 	_putchar('%');
 	return (1);
 }
 
 /**
- * print_string - print string
+ * ps - print string
  * @arg: argument
  *
  * Return: a - 1 the number of characters in string.
  */
-int print_string(va_list arg)
+int ps(va_list arg)
 {
 	int a = 0;
 	char *s = va_arg(arg, char *);
