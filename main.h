@@ -23,6 +23,7 @@ int _putchar(char c);
 int print_char(va_list arg);
 int print_string(va_list arg);
 int print_perc(va_list arg __attribute((unused)));
-int print_unsigned_int(va_list arg);
 
+int print_dig_call(va_list arg);
+int print_dig(long int k, long int n);
 #endif /* MAIN_H */
