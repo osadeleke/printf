@@ -19,7 +19,8 @@ int print_dig_call(va_list arg)
 
 /**
  * print_dig - prints signed integers.
- * @arg: argument value here int.
+ * @k: integer to be printed
+ * @n: length of integer to be printed.
  *
  * Return: n length of int.
  */
@@ -60,8 +61,9 @@ int print_dig_call_u(va_list arg)
 
 
 /**
- * print_dig_call_u - prints unsigned integers.
- * @arg: argument value here int.
+ * print_dig_u - prints unsigned integers.
+ * @k: integer to be printed
+ * @n: length of integer
  *
  * Return: n length of int.
  */
