@@ -8,28 +8,37 @@
  */
 int bc(va_list arg)
 {
-	long int k = va_arg(arg, int);
-	long int n;
+	long int check = 1, i = 0;
+	long int k = va_arg(arg, int), w = k;
+	int n = 0;
 
-	n = print_binary(k, 0);
-
-	return (n);
-}
-
-/**
- * print_binary - print binary number
- * @k: integer to be converted and printed.
- * @n: length of the binary
- *
- * Return: n is number of binary numbers
- */
-int print_binary(long int k, long int n)
-{
-	if (k > 1)
+	if (k == 0)
 	{
-		n = print_binary(k / 2, n++);
+		_putchar('0');
+		return (1);
 	}
-	_putchar(k % 2 + '0');
-	n++;
+
+	while (w > 0)
+	{
+		i++;
+		w = w >> 1;
+	}
+
+	check = check << (i - 1);
+
+	for (; i > 0; i--)
+	{
+		if (k & check)
+		{
+			_putchar('1');
+			n++;
+		}
+		else
+		{
+			_putchar('0');
+			n++;
+		}
+		check = check >> 1;
+	}
 	return (n);
 }
